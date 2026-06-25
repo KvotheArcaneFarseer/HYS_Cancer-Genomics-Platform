@@ -1,0 +1,52 @@
+{
+  "cancer_type": "Breast Invasive Carcinoma",
+  "gene": "TP53",
+  "study_id": "brca_tcga_pan_can_atlas_2018",
+  "mutation_frequency": {
+    "mutated_samples": 341,
+    "total_samples": 1084,
+    "percentage": 31.5
+  },
+  "biological_function": {
+    "summary": "TP53 encodes the tumor suppressor protein p53, often called the 'guardian of the genome.' It regulates the cell cycle and acts as a tumor suppressor by preventing genome mutation.",
+    "affected_pathways": [
+      "Cell cycle regulation",
+      "DNA damage response",
+      "Apoptosis",
+      "p53 signaling pathway"
+    ]
+  },
+  "common_mutations": [
+    { "amino_acid_change": "R248W", "count": 28, "type": "Missense Mutation" },
+    { "amino_acid_change": "R175H", "count": 22, "type": "Missense Mutation" },
+    { "amino_acid_change": "R248Q", "count": 18, "type": "Missense Mutation" },
+    { "amino_acid_change": "R273H", "count": 15, "type": "Missense Mutation" }
+  ],
+  "targeted_therapies": [
+    {
+      "drug": "APR-246 (Eprenetapopt)",
+      "mechanism": "Restores wild-type p53 function in mutant p53 tumors",
+      "status": "Clinical trials",
+      "source_url": "https://clinicaltrials.gov/search?term=APR-246"
+    },
+    {
+      "drug": "Palbociclib",
+      "mechanism": "CDK4/6 inhibitor; targets downstream of p53 pathway loss",
+      "status": "FDA approved (HR+ breast cancer)",
+      "source_url": "https://www.fda.gov/drugs"
+    }
+  ],
+  "literature": [
+    {
+      "title": "TP53 mutations in human cancers: origins, consequences, and clinical use",
+      "pmid": "21427750",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/21427750/"
+    },
+    {
+      "title": "Mutant p53 in cancer: new functions and therapeutic opportunities",
+      "pmid": "26383139",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/26383139/"
+    }
+  ],
+  "disclaimer": "This tool is for research purposes only. Not for clinical use."
+}
