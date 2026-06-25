@@ -15,10 +15,7 @@ app.add_middleware(
 BASE_DIR = os.path.dirname(__file__)
 
 @app.get("/data")
-def get_cancer_profile(
-    cancer_type: str = Query(..., examples=["breast"]),
-    gene: str = Query(..., examples=["tp53"])
-):
+def get_cancer_profile(cancer_type: str = Query(... ), gene: str = Query(...)):
     # Day 1 task: return mock data
     mock_path = os.path.join(BASE_DIR, "mock_cancer_profile.json")
     with open(mock_path) as f:
