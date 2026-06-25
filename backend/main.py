@@ -19,7 +19,7 @@ def get_cancer_profile(
     cancer_type: str = Query(..., examples=["breast"]),
     gene: str = Query(..., examples=["tp53"])
 ):
-    # Day 1: return mock data
+    # Day 1 task: return mock data
     mock_path = os.path.join(BASE_DIR, "mock_cancer_profile.json")
     with open(mock_path) as f:
         data = json.load(f)
