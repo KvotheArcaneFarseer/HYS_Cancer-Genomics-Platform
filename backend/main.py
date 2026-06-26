@@ -1,7 +1,7 @@
 from fastapi import FastAPI, Query
 from fastapi.middleware.cors import CORSMiddleware
-import json
-import os
+
+from services.cbioportal import fetch_cancer_profile
 
 app = FastAPI(title="Cancer Genomics Research API")
 
@@ -12,14 +12,12 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-BASE_DIR = os.path.dirname(__file__)
-
 @app.get("/data")
 def get_cancer_profile(cancer_type: str = Query(... ), gene: str = Query(...)):
-    # Day 1 task: return mock data
-    mock_path = os.path.join(BASE_DIR, "Mock_cancer_profile.json")
-    with open(mock_path) as f:
-        data = json.load(f)
+    
+    data = fetch_cancer_profile(cancer_type, gene)
+    if data is None:
+        return {"error": f"Cancer type '{cancer_type}' is not supported yer."}
     return data
 
 @app.get("/health")
